@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "VerifiAI",
+    "slug": "verifiai-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.verifiai.mobile",
+      "infoPlist": {
+        "NSCameraUsageDescription": "VerifiAI needs camera access to capture images for AI detection.",
+        "NSPhotoLibraryUsageDescription": "VerifiAI needs photo library access to analyze your images."
+      }
+    },
+    "android": {
+      "package": "com.verifiai.mobile",
+      "permissions": ["CAMERA", "READ_MEDIA_IMAGES", "POST_NOTIFICATIONS"]
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-local-authentication",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow VerifiAI to use the camera for AI detection"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow VerifiAI to access your photos for AI detection"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png"
+        }
+      ]
+    ]
+  }
+}
